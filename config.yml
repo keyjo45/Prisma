@@ -1,0 +1,39 @@
+
+# Logging settings.
+logging:
+  level: INFO
+  loggers:
+    com.nutresa: DEBUG
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+
+  # Logger-specific levels.
+  loggers:
+
+    # Sets the level for 'com.example.app' to DEBUG.
+    com.example.app: DEBUG
+
+    org.hibernate.SQL: ALL
+
+    com.github.toastshaman: DEBUG
+
+  appenders:
+    - type: console
+      logFormat: "%logger{5}: %message%n"
+
+databaseConfiguration:
+  url: jdbc:mysql://localhost:3306/bd_prisma_3020
+  properties:
+    hibernate.dialect : org.hibernate.dialect.MySQLDialect
+    hibernate.show_sql : true
+    hibernate.hbm2ddl.auto : update
+    hibernate.dialect : org.hibernate.dialect.MySQLDialect
+    hibernate.connection.driver_class: com.mysql.jdbc.Driver
+    hibernate.connection.username: root
+    hibernate.connection.password: lazaro86
+server:
+ applicationConnectors:
+ - type: http
+   port: 8089
+
